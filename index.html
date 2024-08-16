@@ -72,7 +72,7 @@
           padding: 6px 12px;
           border-radius: 4px;
           cursor: pointer;
-          font-size: 0.85em;
+          font-size: 1em;
           transition: background-color 0.3s ease;
         }
         
@@ -107,7 +107,7 @@
           width: 100%;
           border-collapse: collapse;
           margin-bottom: 15px;
-          font-size: 0.85em;
+          font-size: 1em;
         }
         
         th, td {
@@ -128,8 +128,7 @@
         
         td:hover {
           background-color: #eef2f3;
-          transform: scale(1.1);
-          border: 0.5px solid #2c3e50;
+          transform: scale(1.1);  
         }
         
         /* Subject Table Styles */
@@ -144,7 +143,7 @@
           padding: 4px 6px;
           border-radius: 3px;
           cursor: pointer;
-          font-size: 0.75em;
+          font-size: 1em;
         }
         
         .delete-btn:hover {
@@ -152,15 +151,6 @@
         }
         
         /* Footer Styles */
-        footer {
-          text-align: center;
-          margin-top: 25px;
-          padding: 10px;
-          background-color: var(--primary-color);
-          color: white;
-          border-radius: 0 0 8px 8px;
-          font-size: 0.85em;
-        }
 
         .top-bar {
     display: flex;
@@ -183,28 +173,47 @@
     text-decoration: underline;
 }
 
-.coffee-logo {
-    height: 30px;
+footer {
+  margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0 0 8px 8px;
+    font-size: 1em;
 }
 
-/* Social icons in footer */
+footer .left-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .right-section {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.social-icons a img {
+    filter: brightness(0) invert(1); /* Makes logos white */
+}
+
 .social-icons {
-    margin-top: 10px;
-}
-
-.social-icons a {
-    margin: 0 10px;
+    margin-top: 5px;
 }
 
 .icon {
     width: 24px;
     height: 24px;
-    vertical-align: middle;
+    margin-bottom: 5px; /* Adds spacing between the icons */
 }
         
         .heart {
           color: #ff6b6b;
-          font-size: 1em;
+          font-size: 1.5em;
           animation: heartbeat 1.2s infinite;
         }
         
@@ -390,16 +399,21 @@
     </table>
     
     <footer>
-        Made with <span class="heart">♥</span> by Harsh
-        <br>
-        <a href="https://buymeacoffee.com/harshshukla.dev" target="_blank">Buy me a coffee</a>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/harsh-shukla-1inkdein/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"></a>
-            <a href="https://github.com/Cyb3rghoul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon"></a>
-            <a href="https://www.instagram.com/haarrrssshhh_" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="icon"></a>
-            <a href="https://twitter.com/Cypher1911" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icon"></a>
-        </div>
-    </footer>
+      <div class="left-section">
+          <div>Made with <span class="heart">♥</span> by Harsh</div>
+          <br>
+          <div><a href="https://buymeacoffee.com/harshshukla.dev" target="_blank">Buy me a coffee</a></div>
+      </div>
+      <div class="right-section">
+          <div class="social-icons" style="display: flex; flex-direction: column; margin-right: 10px;">
+              <a href="https://www.linkedin.com/in/harsh-shukla-1inkdein/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"></a>
+              <a href="https://github.com/Cyb3rghoul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon"></a>
+              <a href="https://www.instagram.com/haarrrssshhh_" target="_blank"><img src="https://i.pinimg.com/originals/7f/7b/87/7f7b872e56430e68d69538b17525c51c.png" alt="Instagram" class="icon"></a>
+              <a href="https://twitter.com/Cypher1911" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icon"></a>
+          </div>
+      </div>
+  </footer>
+  
 
     <script>let selectedColor = '';
         let selectedSlots = new Set();
