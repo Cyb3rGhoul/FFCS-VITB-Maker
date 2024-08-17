@@ -2,640 +2,147 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
 
-  <title>FFCS VITB Maker</title>
-  <style>
-    /* Clean and Minimal CSS for Interactive Timetable */
-    :root {
-      --primary-color: #4a90e2;
-      --secondary-color: #50c6a4;
-      --background-color: #eef2f3;
-      --text-color: #2c3e50;
-      --border-color: #d1d8e0;
-      --hover-color: #ff6b6b;
-    }
+    <title>FFCS VITB Maker</title>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    h1 {
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      font-size: 2em;
-      text-align: center;
-      /* Centers the h1 text */
-      font-weight: 600;
-    }
-
-    /* Form Styles */
-    .form-row {
-      display: flex;
-      justify-content: center;
-      /* Center the form row */
-      align-items: center;
-      margin-bottom: 15px;
-      gap: 10px;
-      /* Space between elements */
-    }
-
-    .input-group label {
-      margin-right: 8px;
-      font-size: 1.25em;
-      white-space: nowrap;
-    }
-
-    input[type="number"],
-    input[type="text"] {
-      width: 150px;
-      padding: 6px;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-size: 1.25em;
-    }
-
-    button {
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1.3em;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #3d7bbf;
-    }
-
-    /* Color Picker Styles */
-    .color-picker {
-      display: flex;
-      justify-content: center;
-      /* Center the color picker */
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 15px;
-    }
-
-    .color-option {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .color-option:hover {
-      transform: scale(1.1);
-    }
-
-    /* Table Styles */
-    table {
-      margin-top: 10px;
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 15px;
-      font-size: 1.3em;
-    }
-
-    th,
-    td {
-      border: 1px solid var(--border-color);
-      padding: 6px;
-      text-align: center;
-    }
-
-    th {
-      background-color: var(--primary-color);
-      color: white;
-    }
-
-    td {
-      background-color: white;
-      transition: background-color 0.2s ease, transform 0.3s ease;
-    }
-
-    td:hover {
-      background-color: #eef2f3;
-      transform: scale(1.1);
-    }
-
-    /* Subject Table Styles */
-    #subjectTable th {
-      background-color: var(--secondary-color);
-    }
-
-    .delete-btn {
-      background-color: var(--hover-color);
-      color: white;
-      border: none;
-      padding: 4px 6px;
-      border-radius: 3px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-
-    .delete-btn:hover {
-      background-color: #e55656;
-    }
-
-    /* Footer Styles */
-
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-
-    .top-bar a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .top-bar a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 0 0 8px 8px;
-      font-size: 1.3em;
-    }
-
-    footer .left-section {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    footer .right-section {
-      display: flex;
-      align-items: flex-end;
-      flex-direction: column;
-    }
-
-    .social-icons a img {
-      filter: brightness(0) invert(1);
-      /* Makes logos white */
-    }
-
-    .social-icons {
-      margin-top: 5px;
-    }
-
-    .icon {
-      width: 24px;
-      height: 24px;
-      margin-bottom: 5px;
-      /* Adds spacing between the icons */
-    }
-
-    .heart {
-      color: #ff6b6b;
-      font-size: 1.5em;
-      animation: heartbeat 1.2s infinite;
-    }
-
-    @keyframes heartbeat {
-
-      0%,
-      100% {
-        transform: scale(0.8);
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .container {
-        padding: 15px;
-      }
-
-      h1 {
-        font-size: 1.4em;
-      }
-
-      table {
-        font-size: 0.75em;
-      }
-
-      th,
-      td {
-        padding: 5px;
-      }
-
-      p {
-        font-size: 0.75em;
-      }
-
-      input[type="number"],
-      input[type="text"] {
-        font-size: 0.75em;
-      }
-
-      img {
-        width: 100px;
-      }
-
-      button {
-        font-size: 0.5em;
-        margin-top: 10px;
-      }
-
-      a {
-        font-size: 0.75em;
-      }
-
-      footer a{
-        font-size: 0.85em;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.2em;
-      }
-
-      table {
-        font-size: 0.7em;
-      }
-
-      th,
-      td {
-        padding: 4px;
-      }
-
-      .input-group {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .input-group label {
-        margin-bottom: 5px;
-      }
-      
-      p {
-        font-size: 0.75em;
-      }
-
-      input[type="number"],
-      input[type="text"] {
-        font-size: 0.75em;
-      }
-
-      img {
-        width: 100px;
-      }
-
-      button {
-        font-size: 0.75em;
-        margin-top: 10px;
-      }
-
-      footer a {
-        font-size: 1em;
-      }
-
-      footer {
-        font-size: 0.85em;
-      }
-    }
-
-    /* Subtle animation for table cells */
-    @keyframes cellHighlight {
-      0% {
-        background-color: var(--primary-color);
-        opacity: 0.1;
-      }
-
-      100% {
-        background-color: transparent;
-      }
-    }
-
-    .highlight {
-      animation: cellHighlight 0.3s ease-out;
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-  <h1>Make your Time Table (FFCS)</h1>
-  <div class="top-bar">
-    <a href="https://github.com/Cyb3rGhoul/FFCS-VITB-Maker" target="_blank" class="top-link">⭐ Give a star to this
+    <h1>Make your Time Table (FFCS)</h1>
+    <div class="top-bar">
+        <a href="https://github.com/Cyb3rGhoul/FFCS-VITB-Maker" target="_blank" class="top-link">⭐ Give a star to this
       project on GitHub</a>
-    <a href="https://buymeacoffee.com/harshshukla.dev
+        <a href="https://buymeacoffee.com/harshshukla.dev
         " target="_blank">
-      <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy me a coffee"
-        width="200px" class="coffee-logo">
-    </a>
-  </div>
-  <div>
-    <label for="subjectCount">Number of Subjects:</label>
-    <input type="number" id="subjectCount" min="1" max="10" value="5">
-    <button onclick="generateColorPickers()">Generate Color Pickers</button>
-  </div>
-
-  <p>Select a colour from the colour pallet bellow:</p>
-  <div id="colorPickers" class="color-picker"></div>
-
-  <table id="timetable">
-    <tr>
-      <th></th>
-      <th>8.30-10.00</th>
-      <th>10.05-11.35</th>
-      <th>11.40-13.10</th>
-      <th>13.15-14.45</th>
-      <th>14.50-16.20</th>
-      <th>16.25-17.55</th>
-      <th>18.00-19.30</th>
-    </tr>
-    <tr>
-      <th>Mon</th>
-      <td id="A11">A11</td>
-      <td id="B11">B11</td>
-      <td id="C11">C11</td>
-      <td id="A21">A21</td>
-      <td id="A14">A14</td>
-      <td id="B21">B21</td>
-      <td id="C21">C21</td>
-    </tr>
-    <tr>
-      <th>Tue</th>
-      <td id="D11">D11</td>
-      <td id="E11">E11</td>
-      <td id="F11">F11</td>
-      <td id="D21">D21</td>
-      <td id="E14">E14</td>
-      <td id="E21">E21</td>
-      <td id="F21">F21</td>
-    </tr>
-    <tr>
-      <th>Wed</th>
-      <td id="A12">A12</td>
-      <td id="B12">B12</td>
-      <td id="C12">C12</td>
-      <td id="A22">A22</td>
-      <td id="B14">B14</td>
-      <td id="B22">B22</td>
-      <td id="A24">A24</td>
-
-    </tr>
-    <tr>
-      <th>Thu</th>
-      <td id="D12">D12</td>
-      <td id="E12">E12</td>
-      <td id="F12">F12</td>
-      <td id="D22">D22</td>
-      <td id="F14">F14</td>
-      <td id="E22">E22</td>
-      <td id="F22">F22</td>
-    </tr>
-    <tr>
-      <th>Fri</th>
-      <td id="A13">A13</td>
-      <td id="B13">B13</td>
-      <td id="C13">C13</td>
-      <td id="A23">A23</td>
-      <td id="C14">C14</td>
-      <td id="B23">B23</td>
-      <td id="B24">B24</td>
-    </tr>
-    <tr>
-      <th>Sat</th>
-      <td id="D13">D13</td>
-      <td id="E13">E13</td>
-      <td id="F13">F13</td>
-      <td id="D23">D23</td>
-      <td id="D14">D14</td>
-      <td id="D24">D24</td>
-      <td id="E23">E23</td>
-    </tr>
-  </table>
-
-  <form id="subjectForm">
-    <input type="text" id="subjectName" placeholder="Subject Name" required>
-    <input type="text" id="facultyName" placeholder="Faculty Name" required>
-    <button type="submit">Add Subject</button>
-  </form>
-
-  <table id="subjectTable">
-    <thead>
-      <tr>
-        <th>S.No</th>
-        <th>Slot</th>
-        <th>Faculty Name</th>
-        <th>Subject</th>
-        <th>Color</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
-  <footer>
-    <div class="left-section">
-      <div>Made with <span class="heart">♥</span> by Harsh Shukla</div>
-      <br>
-      <div><a href="https://buymeacoffee.com/harshshukla.dev" target="_blank">Buy me a coffee</a></div>
+            <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy me a coffee" width="200px" class="coffee-logo">
+        </a>
     </div>
-    <div class="right-section">
-      <div class="social-icons" style="display: flex; flex-direction: column; margin-right: 10px;">
-        <a href="https://www.linkedin.com/in/harsh-shukla-1inkdein/" target="_blank"><img
-            src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"></a>
-        <a href="https://github.com/Cyb3rghoul" target="_blank"><img
-            src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon"></a>
-        <a href="https://www.instagram.com/haarrrssshhh_" target="_blank"><img
-            src="https://i.pinimg.com/originals/7f/7b/87/7f7b872e56430e68d69538b17525c51c.png" alt="Instagram"
-            class="icon"></a>
-        <a href="https://twitter.com/Cypher1911" target="_blank"><img
-            src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icon"></a>
-      </div>
+    <div>
+        <label for="subjectCount">Number of Subjects:</label>
+        <input type="number" id="subjectCount" min="1" max="10" value="5">
+        <button onclick="generateColorPickers()">Generate Color Pickers</button>
     </div>
-  </footer>
+
+    <p>Select a colour from the colour pallet bellow:</p>
+    <div id="colorPickers" class="color-picker"></div>
+
+    <table id="timetable">
+        <tr>
+            <th></th>
+            <th>8.30-10.00</th>
+            <th>10.05-11.35</th>
+            <th>11.40-13.10</th>
+            <th>13.15-14.45</th>
+            <th>14.50-16.20</th>
+            <th>16.25-17.55</th>
+            <th>18.00-19.30</th>
+        </tr>
+        <tr>
+            <th>Mon</th>
+            <td id="A11">A11</td>
+            <td id="B11">B11</td>
+            <td id="C11">C11</td>
+            <td id="A21">A21</td>
+            <td id="A14">A14</td>
+            <td id="B21">B21</td>
+            <td id="C21">C21</td>
+        </tr>
+        <tr>
+            <th>Tue</th>
+            <td id="D11">D11</td>
+            <td id="E11">E11</td>
+            <td id="F11">F11</td>
+            <td id="D21">D21</td>
+            <td id="E14">E14</td>
+            <td id="E21">E21</td>
+            <td id="F21">F21</td>
+        </tr>
+        <tr>
+            <th>Wed</th>
+            <td id="A12">A12</td>
+            <td id="B12">B12</td>
+            <td id="C12">C12</td>
+            <td id="A22">A22</td>
+            <td id="B14">B14</td>
+            <td id="B22">B22</td>
+            <td id="A24">A24</td>
+
+        </tr>
+        <tr>
+            <th>Thu</th>
+            <td id="D12">D12</td>
+            <td id="E12">E12</td>
+            <td id="F12">F12</td>
+            <td id="D22">D22</td>
+            <td id="F14">F14</td>
+            <td id="E22">E22</td>
+            <td id="F22">F22</td>
+        </tr>
+        <tr>
+            <th>Fri</th>
+            <td id="A13">A13</td>
+            <td id="B13">B13</td>
+            <td id="C13">C13</td>
+            <td id="A23">A23</td>
+            <td id="C14">C14</td>
+            <td id="B23">B23</td>
+            <td id="B24">B24</td>
+        </tr>
+        <tr>
+            <th>Sat</th>
+            <td id="D13">D13</td>
+            <td id="E13">E13</td>
+            <td id="F13">F13</td>
+            <td id="D23">D23</td>
+            <td id="D14">D14</td>
+            <td id="D24">D24</td>
+            <td id="E23">E23</td>
+        </tr>
+    </table>
+
+    <form id="subjectForm">
+        <input type="text" id="subjectName" placeholder="Subject Name" required>
+        <input type="text" id="facultyName" placeholder="Faculty Name" required>
+        <button type="submit">Add Subject</button>
+    </form>
+
+    <table id="subjectTable">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Slot</th>
+                <th>Faculty Name</th>
+                <th>Subject</th>
+                <th>Color</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <footer>
+        <div class="left-section">
+            <div>Made with <span class="heart">♥</span> by Harsh Shukla</div>
+            <br>
+            <div><a href="https://buymeacoffee.com/harshshukla.dev" target="_blank">Buy me a coffee</a></div>
+        </div>
+        <div class="right-section">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/harsh-shukla-1inkdein/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"></a>
+                <a href="https://github.com/Cyb3rghoul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon"></a>
+                <a href="https://www.instagram.com/haarrrssshhh_" target="_blank"><img src="https://i.pinimg.com/originals/7f/7b/87/7f7b872e56430e68d69538b17525c51c.png" alt="Instagram" class="icon"></a>
+                <a href="https://twitter.com/Cypher1911" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icon"></a>
+            </div>
+        </div>
+    </footer>
 
 
-  <script>
-    let selectedColor = '';
-    let selectedSlots = new Set();
-    let subjectData = [];
-
-    function generateColorPickers() {
-      const count = document.getElementById('subjectCount').value;
-      const container = document.getElementById('colorPickers');
-      container.innerHTML = '';
-      for (let i = 0; i < count; i++) {
-        const color = getRandomPastelColorRGB();
-        const picker = document.createElement('div');
-        picker.className = 'color-option';
-        picker.style.backgroundColor = color;
-        picker.onclick = () => selectColor(color);
-        container.appendChild(picker);
-      }
-    }
-
-    function getRandomPastelColorRGB() {
-      const r = Math.floor((Math.random() * 127) + 127); // Range: 127-254 (lighter shades)
-      const g = Math.floor((Math.random() * 127) + 127);
-      const b = Math.floor((Math.random() * 127) + 127);
-
-      return `rgb(${r}, ${g}, ${b})`;
-    }
-
-    function selectColor(color) {
-      if (selectedSlots.size > 0) {
-        alert("Please add the selected slots to the table before changing the color.");
-        return;
-      }
-      selectedColor = color;
-    }
-
-    document.getElementById('timetable').addEventListener('click', (e) => {
-      if (e.target.tagName === 'TD') {
-        const currentColor = e.target.style.backgroundColor;
-
-        if (selectedColor) {
-          if (currentColor === selectedColor) {
-            // If the selected color is already applied, unselect it
-            e.target.style.backgroundColor = '';
-            selectedSlots.delete(e.target.id);
-          } else if (!currentColor) {
-            // If no color is applied, apply the selected color
-            e.target.style.backgroundColor = selectedColor;
-            selectedSlots.add(e.target.id);
-          } else {
-            alert('No overlapping of slots allowed');
-          }
-        } else {
-          alert('Please select a color first');
-        }
-      }
-    });
-
-    document.getElementById('subjectForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const subject = document.getElementById('subjectName').value;
-      const faculty = document.getElementById('facultyName').value;
-      if (selectedSlots.size > 0) {
-        addSubjectData(subject, faculty);
-        updateSubjectTable();
-        resetForm();
-      } else {
-        alert('Please select at least one slot');
-      }
-    });
-
-    function addSubjectData(subject, faculty) {
-      subjectData.push({
-        id: subjectData.length + 1,
-        slots: Array.from(selectedSlots).sort(),
-        faculty,
-        subject,
-        color: selectedColor
-      });
-    }
-
-    function updateSubjectTable() {
-      const tbody = document.querySelector('#subjectTable tbody');
-      tbody.innerHTML = '';
-      subjectData.forEach((data, index) => {
-        const row = tbody.insertRow();
-        row.insertCell(0).textContent = index + 1;
-        row.insertCell(1).textContent = data.slots.join('-');
-        row.insertCell(2).textContent = data.faculty;
-        row.insertCell(3).textContent = data.subject;
-        const colorCell = row.insertCell(4);
-        colorCell.style.backgroundColor = data.color;
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.className = 'delete-btn';
-        deleteButton.onclick = () => deleteSubject(index);
-        row.insertCell(5).appendChild(deleteButton);
-      });
-    }
-
-    function deleteSubject(index) {
-      // Get the slots of the subject being deleted
-      const slotsToClear = subjectData[index].slots;
-
-      // Remove the subject from the subjectData array
-      subjectData.splice(index, 1);
-
-      // Clear only the slots related to the deleted subject
-      slotsToClear.forEach(slotId => {
-        document.getElementById(slotId).style.backgroundColor = '';
-      });
-
-      // Reapply the colors for the remaining subjects
-      reapplySubjectColors();
-
-      updateSubjectTable();
-    }
-
-    function reapplySubjectColors() {
-      subjectData.forEach(data => {
-        data.slots.forEach(slot => {
-          document.getElementById(slot).style.backgroundColor = data.color;
-        });
-      });
-    }
-
-    function resetForm() {
-      document.getElementById('subjectName').value = '';
-      document.getElementById('facultyName').value = '';
-      selectedSlots.clear();
-      selectedColor = '';
-    }
-
-    // Initialize color pickers
-    generateColorPickers();
-
-  </script>
+    <script type="text/javascript" src="JS/main.js "></script>
 </body>
 
 </html>
