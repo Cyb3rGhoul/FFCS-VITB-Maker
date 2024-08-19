@@ -131,8 +131,12 @@
  }
  /* Subject Table Styles */
  
- .download-btn {
-     margin-left: 1rem;
+ .download-format {
+     margin: 1rem 0;
+ }
+ 
+ #downloadBtn {
+     margin-bottom: 1rem;
  }
  
  .download-btn:hover {
