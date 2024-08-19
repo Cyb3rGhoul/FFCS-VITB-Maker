@@ -29,7 +29,15 @@ This project uses plain HTML, CSS, and JavaScript.
 ### Folder Structure
 
 ```bash
-├── index.html
+├── CSS
+│   └── style.css
+├── JS
+│   └── main.js
+├── assets
+│   ├── favicon.ico
+│   └── image.png
+├── README.md
+└── index.html
 ```
 
 ### Installation
