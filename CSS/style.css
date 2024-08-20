@@ -131,6 +131,18 @@
  }
  /* Subject Table Styles */
  
+ .download-format {
+     margin: 1rem 0;
+ }
+ 
+ #downloadBtn {
+     margin-bottom: 1rem;
+ }
+ 
+ .download-btn:hover {
+     transition: all .3s ease-in-out;
+ }
+ 
  #subjectTable th {
      background-color: var(--secondary-color);
  }

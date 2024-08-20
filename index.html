@@ -8,6 +8,7 @@
 
     <title>FFCS VITB Maker</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
@@ -109,6 +110,15 @@
         <input type="text" id="subjectName" placeholder="Subject Name" required>
         <input type="text" id="facultyName" placeholder="Faculty Name" required>
         <button type="submit">Add Subject</button>
+        <div class="download-format">
+            <label>Select Download Format:</label>
+            <input type="radio" id="downloadPDF" name="downloadFormat" value="pdf" checked>
+            <label for="downloadPDF">PDF</label>
+            <input type="radio" id="downloadJPG" name="downloadFormat" value="jpg">
+            <label for="downloadJPG">JPEG</label>
+        </div>
+        <button id="downloadBtn" type="button" disabled>Download Timetable <i class="fas fa-download"></i></button>
+
     </form>
 
     <table id="subjectTable">
@@ -140,6 +150,10 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 
 
     <script type="text/javascript" src="JS/main.js "></script>
