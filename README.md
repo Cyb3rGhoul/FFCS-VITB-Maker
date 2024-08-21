@@ -67,3 +67,15 @@ This project is licensed under the MIT License.
 - GitHub: [Cyb3rghoul](https://github.com/Cyb3rghoul)
 - Instagram: [@haarrrssshhh_](https://www.instagram.com/haarrrssshhh_)
 - Twitter: [@Cypher1911](https://twitter.com/Cypher1911)
+
+## Contributors
+
+<div style="display: flex; align-items: center; padding: 10px; border-radius: 10px; background-color: #ADD8E6; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); max-width: 250px; margin: 10px;">
+  <img src="https://avatars.githubusercontent.com/u/77756722?v=4" alt="Contributor's Profile Picture" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid #FFF;">
+  <div style="margin-left: 15px;">
+    <a href="https://github.com/nattcodes" style="color: #000000; font-size: 18px; font-family: 'Comic Sans MS', sans-serif; text-decoration: none;">Kome Nathaniel</a>
+  </div>
+</div>
+
+
+
