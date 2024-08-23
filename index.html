@@ -9,27 +9,28 @@
     <title>FFCS VITB Maker</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-    <h1>Make your Time Table (FFCS)</h1>
+    <h1 style="font-weight: bold;">Make your Time Table (FFCS)</h1>
     <div class="top-bar">
-        <a href="https://github.com/Cyb3rGhoul/FFCS-VITB-Maker" target="_blank" class="top-link">⭐ Give a star to this
+        <a href="https://github.com/Cyb3rGhoul/FFCS-VITB-Maker" target="_blank" class="top-link" style="font-size: 1.2rem;">⭐ Give a star to this
       project on GitHub</a>
         <a href="https://buymeacoffee.com/harshshukla.dev
         " target="_blank">
-            <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy me a coffee" width="200px" class="coffee-logo">
+            <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-1.svg" alt="Buy me a coffee" width="180px" class="coffee-logo">
         </a>
     </div>
     <div>
-        <label for="subjectCount">Number of Subjects:</label>
-        <input type="number" id="subjectCount" min="1" max="10" value="5">
+        <label for="subjectCount" style="font-size: 1.2rem;">Number of Subjects:</label>
+        <input type="number" id="subjectCount" min="1" max="10" value="5" style="height: 15px;">
         <button onclick="generateColorPickers()">Generate Color Pickers</button>
     </div>
 
-    <p>Select a colour from the colour pallet bellow:</p>
+    <p style="font-size: 1.2rem;">Select a colour from the colour pallet bellow:</p>
     <div id="colorPickers" class="color-picker"></div>
 
     <table id="timetable">
@@ -142,11 +143,11 @@
             <div><a href="https://buymeacoffee.com/harshshukla.dev" target="_blank">Buy me a coffee</a></div>
         </div>
         <div class="right-section">
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/harsh-shukla-1inkdein/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon"></a>
-                <a href="https://github.com/Cyb3rghoul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon"></a>
-                <a href="https://www.instagram.com/haarrrssshhh_" target="_blank"><img src="https://i.pinimg.com/originals/7f/7b/87/7f7b872e56430e68d69538b17525c51c.png" alt="Instagram" class="icon"></a>
-                <a href="https://twitter.com/Cypher1911" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icon"></a>
+            <div class="social-icons" style="display: flex; flex-direction: column; align-items: start; margin: 10px 0;">
+                <a href="https://www.linkedin.com/in/harsh-shukla-1inkdein/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="icon">/harsh-shukla-1inkdein</a>
+                <a href="https://github.com/Cyb3rghoul" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="icon">/Cyb3rGhoul</a>
+                <a href="https://www.instagram.com/haarrrssshhh_" target="_blank"><img src="https://i.pinimg.com/originals/7f/7b/87/7f7b872e56430e68d69538b17525c51c.png" alt="Instagram" class="icon">/haarrrssshhh_</a>
+                <a href="https://twitter.com/Cypher1911" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icon">/Cypher1911</a>
             </div>
         </div>
     </footer>
