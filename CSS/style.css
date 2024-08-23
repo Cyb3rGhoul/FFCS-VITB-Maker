@@ -64,6 +64,7 @@ input[type="text"] {
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 1.25em;
+    margin-right: 10px;
 }
 
 button {
