@@ -13,7 +13,7 @@ FFCS VITB Maker is a web-based timetable creation tool designed to help students
 ## Screenshots
 
 ### Timetable
-![Timetable Screenshot](https://github.com/Cyb3rGhoul/FFCS-VITB-Maker/blob/main/assets/image.png?raw=true)
+![Timetable Screenshot](https://github.com/Cyb3rGhoul/FFCS-VITB-Maker/blob/main/assets/image1.png?raw=true)
 
 ## Usage
 
