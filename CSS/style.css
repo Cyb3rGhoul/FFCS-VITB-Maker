@@ -1,12 +1,26 @@
  /* Clean and Minimal CSS for Interactive Timetable */
  
  :root {
+     --headerH1-color: #4a90e2;
      --primary-color: #4a90e2;
      --secondary-color: #50c6a4;
      --background-color: #eef2f3;
      --text-color: #2c3e50;
      --border-color: #d1d8e0;
      --hover-color: #ff6b6b;
+     --tdHover-color: #e0e0e0eb;
+     --thtext-color: #f1f1f1f2;
+ }
+ 
+ .dark-theme {
+     --thtext-color: #f1f1f1f2;
+     --headerH1-color: #9bcaffe0;
+     --primary-color: #333333;
+     --secondary-color: #50c6a4;
+     --background-color: #0d0d0d;
+     --text-color: #f1f1f1f2;
+     --border-color: #242424;
+     --tdHover-color: #333333;
  }
  
  body {
@@ -15,6 +29,7 @@
      color: var(--text-color);
      margin: 0;
      padding: 20px;
+     transition: .5s all ease-in-out;
  }
  
  .container {
@@ -28,7 +43,7 @@
  }
  
  h1 {
-     color: var(--primary-color);
+     color: var(--headerH1-color);
      margin-bottom: 20px;
      font-size: 2em;
      text-align: center;
@@ -117,16 +132,16 @@
  
  th {
      background-color: var(--primary-color);
-     color: white;
+     color: var(--thtext-color);
  }
  
  td {
-     background-color: white;
+     background-color: var(--background-color);
      transition: background-color 0.2s ease, transform 0.3s ease;
  }
  
  td:hover {
-     background-color: #eef2f3;
+     background-color: var(--tdHover-color);
      transform: scale(1.1);
  }
  /* Subject Table Styles */
@@ -177,6 +192,27 @@
      color: white;
      text-decoration: none;
      font-weight: 600;
+ }
+ 
+ .top-bar .top-content {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ .top-bar .top-content a {
+     margin-right: 2rem;
+ }
+ 
+ .top-bar .top-content #mode {
+     cursor: pointer;
+     height: 25px;
+     width: 25px;
+ }
+ 
+ .top-bar .top-content i:hover {
+     color: rgb(224, 224, 224);
+     transition: .2s all ease-in-out;
  }
  
  .top-bar a:hover {
