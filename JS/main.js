@@ -1,18 +1,3 @@
-//dark and light mode feature
-
-let mode = document.getElementById('mode')
-
-mode.onclick = () => {
-        document.body.classList.toggle("dark-theme");
-
-        if (document.body.classList.contains('dark-theme')) {
-            mode.src = 'assets/moon.png'
-        } else {
-            mode.src = 'assets/sun.png'
-        }
-    }
-    //dark and light mode feature
-
 let selectedColor = '';
 let selectedSlots = new Set();
 let subjectData = [];
